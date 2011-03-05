@@ -1,7 +1,7 @@
 Summary:	Demo for the critically-acclaimed first-person shooter
 Name:		ut2004-demo
 Version:	3334
-Release:	0.1
+Release:	0.2
 License:	as-is
 Group:		Applications/Games
 Source0:	http://dev.gentoo.org/~tupone/ut2004-lnx-demo%{version}.run
@@ -61,6 +61,9 @@ cp -a lib/* $RPM_BUILD_ROOT%{gamelibdir}
 
 install -p bin/ut2004-demo $RPM_BUILD_ROOT%{gamelibdir}
 ln -s %{gamelibdir}/ut2004-demo $RPM_BUILD_ROOT%{_bindir}
+
+ln -sf %{_libdir}/libopenal.so.1 $RPM_BUILD_ROOT%{gamelibdir}/System/openal.so
+ln -sf %{_libdir}/libSDL-1.2.so.0 $RPM_BUILD_ROOT%{gamelibdir}/System/libSDL-1.2.so.0
 
 %clean
 rm -rf $RPM_BUILD_ROOT
