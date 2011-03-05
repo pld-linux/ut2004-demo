@@ -1,7 +1,7 @@
 Summary:	Demo for the critically-acclaimed first-person shooter
 Name:		ut2004-demo
 Version:	3334
-Release:	0.2
+Release:	0.3
 License:	as-is
 Group:		Applications/Games
 Source0:	http://dev.gentoo.org/~tupone/ut2004-lnx-demo%{version}.run
@@ -9,8 +9,8 @@ Source0:	http://dev.gentoo.org/~tupone/ut2004-lnx-demo%{version}.run
 URL:		http://www.unrealtournament2004.com/
 ExclusiveArch:	%{ix86} %{x8664}
 %ifarch %{x8664}
-Requires:	libSDL-1.2.so.0(64bit)
-Requires:	libopenal.so.1(64bit)
+Requires:	libSDL-1.2.so.0()(64bit)
+Requires:	libopenal.so.1()(64bit)
 %else
 Requires:	libSDL-1.2.so.0
 Requires:	libopenal.so.1
