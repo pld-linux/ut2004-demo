@@ -1,11 +1,12 @@
 Summary:	Demo for the critically-acclaimed first-person shooter
 Name:		ut2004-demo
 Version:	3334
-Release:	0.3
+Release:	1
 License:	as-is
 Group:		Applications/Games
 Source0:	http://dev.gentoo.org/~tupone/ut2004-lnx-demo%{version}.run
 # Source0-md5:	bf9f483902c6006b94c327fb7b585086
+Source1:	%{name}.desktop
 URL:		http://www.unrealtournament2004.com/
 ExclusiveArch:	%{ix86} %{x8664}
 %ifarch %{x8664}
@@ -62,6 +63,9 @@ cp -a lib/* $RPM_BUILD_ROOT%{gamelibdir}
 install -p bin/ut2004-demo $RPM_BUILD_ROOT%{gamelibdir}
 ln -s %{gamelibdir}/ut2004-demo $RPM_BUILD_ROOT%{_bindir}
 
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p ut2004.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.xpm
+
 ln -sf %{_libdir}/libopenal.so.1 $RPM_BUILD_ROOT%{gamelibdir}/System/openal.so
 ln -sf %{_libdir}/libSDL-1.2.so.0 $RPM_BUILD_ROOT%{gamelibdir}/System/libSDL-1.2.so.0
 
@@ -72,6 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.linux
 %attr(755,root,root) %{_bindir}/ut2004-demo
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.xpm
 %dir %{gamelibdir}
 %attr(755,root,root) %{gamelibdir}/ut2004-demo
 %{gamelibdir}/Animations

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=ut2004-demo
+Name=UT2004 demo
+Comment=Unreal Tournament - futuristic FPS game
+Icon=ut2004-demo
+Categories=Game;X-FPPGame;
